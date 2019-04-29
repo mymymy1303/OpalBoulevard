@@ -17,15 +17,18 @@
     <xsl:template match='News' mode="List">
         <xsl:if
             test="position() mod 16 = 1 or position() mod 16 = 5 or position() mod 16 = 9 or position() mod 16 = 13">
-            <xsl:text disable-output-escaping='yes'>&lt;div class=&quot;col-lg-4&quot;&gt;</xsl:text>
+            <xsl:text disable-output-escaping='yes'>&lt;div class=&quot;col-lg-4 col-xl-3&quot;&gt;</xsl:text>
         </xsl:if>
-        <div class="item" data-map="3">
+        <div class="item">
             <xsl:attribute name='data-map'>
                 <xsl:value-of disable-output-escaping='yes' select='NewsId'></xsl:value-of>
             </xsl:attribute>
             <div class="number">
                 <p>
-                    <xsl:value-of disable-output-escaping='yes' select='SubTitle'></xsl:value-of>
+                    <xsl:if test="position() &gt; 0 and position() &lt; 10">
+                        <xsl:text>0</xsl:text>
+                    </xsl:if>
+                    <xsl:value-of disable-output-escaping='yes' select='position()'></xsl:value-of>
                 </p>
             </div>
             <div class="title">
@@ -45,6 +48,12 @@
         <div class="map-list-info">
             <xsl:attribute name='data-map'>
                 <xsl:value-of disable-output-escaping='yes' select='NewsId'></xsl:value-of>
+            </xsl:attribute>
+            <xsl:attribute name='data-number'>
+                <xsl:if test="position() &gt; 0 and position() &lt; 10">
+                    <xsl:text>0</xsl:text>
+                </xsl:if>
+                <xsl:value-of disable-output-escaping='yes' select='position()'></xsl:value-of>
             </xsl:attribute>
             <xsl:if test="ImageUrl != ''">
                 <div class="image">

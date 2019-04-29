@@ -22,8 +22,7 @@ $(document).ready(function () {
 	matBang03ImageMapInit();
 	popupImagesV1Init();
 
-	tienichImageMap()
-
+	tienichImageMap();
 });
 
 function headerNavMapping() {
@@ -334,38 +333,13 @@ function tienichImageMap() {
 			shadowPosition: 'outside',
 			shadowFrom: false
 		});
-		$(".tienich map area").on('mouseenter', function () {
-			$(this).css('cursor', 'wait');
-			let $currentMapInfo = $('.map-list-1').find("[data-map='" + $(this).attr("data-map") + "']");
-			let tooltip = generateTooltip({
-				$currentMapInfo: $currentMapInfo,
-				tooltipWrapperSelector: '.tooltip-wrapper-1',
-				mapWrapperSelector: '.map-wrapper-1',
-				autoWidth: false
-			});
-			addTooltipClasses(tooltip);
-			positioningTooltip({
-				$area: $('.tienich map').find("[data-map='" + $(this).attr("data-map") + "']"),
-				relativeWrapperSelector: '.imagemap-wrapper-1',
-				tooltipWrapperSelector: '.tooltip-wrapper-1',
-				$tooltip: tooltip,
-				gutterTop: 50 + tooltip.height(),
-				areaType: 'circle'
-			})
-			tooltip.addClass('active');
-			$(this).css('cursor', 'pointer');
-			$('.tienich .items .item').removeClass('active');
-			$('.tienich .items').find("[data-map='" + $(this).attr("data-map") + "']").addClass('active');
-		});
-		$(".tienich map area").on('mouseleave', function () {
-			$('.tienich .items').find("[data-map='" + $(this).attr("data-map") + "']").removeClass('active');
-			$('.tooltip').removeClass('active');
-		});
+
 		$(".tienich .item").on('click', function () {
 			if ($(this).hasClass('active')) {
 				$(this).removeClass('active');
 				$('.tooltip').removeClass('active');
 				$('.tooltip-wrapper-1').removeClass('active');
+				$('.dot').removeClass('active');
 			} else {
 				$(this).css('cursor', 'wait');
 				let $currentMapInfo = $('.map-list-1').find("[data-map='" + $(this).attr("data-map") + "']");
@@ -381,7 +355,7 @@ function tienichImageMap() {
 					relativeWrapperSelector: '.imagemap-wrapper-1',
 					tooltipWrapperSelector: '.tooltip-wrapper-1',
 					$tooltip: tooltip,
-					gutterTop: 50 + tooltip.height(),
+					gutterTop: 10 + tooltip.height(),
 					areaType: 'circle'
 				})
 				tooltip.addClass('active');
@@ -389,13 +363,55 @@ function tienichImageMap() {
 				$(this).css('cursor', 'pointer');
 				$('.tienich .item').removeClass('active')
 				$(this).addClass('active');
+				$('.dot').removeClass('active');
+				$(".dot[data-map='" + $(this).attr("data-map") + "']").addClass('active')
 				$('html, body').animate({
 					scrollTop: $('.tooltip-wrapper-1').offset().top - $('header').height() - 50
 				}, 1000);
 			}
 		});
 	}
+	setTimeout(() => {
+		generateDots({
+			relativeWrapperSelector: '.imagemap-wrapper-1',
+			coordinatesAndDataMapArray: getCoordinatesAndDataMapArray($('.tienich map area')),
+			areaType: 'circle',
+			mapListInfoSelector: $('.map-list-1 .map-list-info')
+		});
+		$(".tienich .dot").on('mouseenter', function () {
+			$(this).css('cursor', 'wait');
+			let $currentMapInfo = $('.map-list-1').find("[data-map='" + $(this).attr("data-map") + "']");
+			let tooltip = generateTooltip({
+				$currentMapInfo: $currentMapInfo,
+				tooltipWrapperSelector: '.tooltip-wrapper-1',
+				mapWrapperSelector: '.map-wrapper-1',
+				autoWidth: false
+			});
+			addTooltipClasses(tooltip);
+			positioningTooltip({
+				$area: $('.tienich map').find("[data-map='" + $(this).attr("data-map") + "']"),
+				relativeWrapperSelector: '.imagemap-wrapper-1',
+				tooltipWrapperSelector: '.tooltip-wrapper-1',
+				$tooltip: tooltip,
+				gutterTop: 10 + tooltip.height(),
+				areaType: 'circle'
+			});
+			$('.tooltip-wrapper-1').addClass('active');
+			tooltip.addClass('active');
+			$('.dot').removeClass('active');
+			$(this).css('cursor', 'pointer').addClass('active');
+			$('.tienich .items .item').removeClass('active');
+			$('.tienich .items').find("[data-map='" + $(this).attr("data-map") + "']").addClass('active');
+		});
+		$(".tienich .dot").on('mouseleave', function () {
+			$('.tienich .items').find("[data-map='" + $(this).attr("data-map") + "']").removeClass('active');
+			$('.tooltip').removeClass('active');
+			$('.dot').removeClass('active');
+			$('.tooltip-wrapper-1').removeClass('active');
+		});
+	}, 1000);
 }
+
 
 
 function generateTooltip(params) {
@@ -458,22 +474,22 @@ function positioningTooltip(params) {
 	if (positionData.averageCoordinate.x > positionData.relativeWrapper.width / 2) {
 		positionData.tooltipWrapper.$this.css({
 			top: yCoordinate,
-			right: 15,
+			right: 0,
 			left: 'initial'
 		});
 		positionData.tooltip.pointer.css({
-			right: positionData.relativeWrapper.width - positionData.averageCoordinate.x - 15,
+			right: positionData.relativeWrapper.width - positionData.averageCoordinate.x - positionData.averageCoordinate.radius/2,
 			left: 'initial'
 		});
 	} else {
 		positionData.tooltipWrapper.$this.css({
 			top: yCoordinate,
 			right: 'initial',
-			left: 15
+			left: 0
 		});
 		positionData.tooltip.pointer.css({
 			right: 'initial',
-			left: positionData.averageCoordinate.x - 15
+			left: positionData.averageCoordinate.x
 		});
 	}
 	if (positionData.averageCoordinate.x - positionData.tooltip.innerWidth / 2 > 0) {
@@ -512,6 +528,7 @@ function getAverageCoordinates(coordinatesArray) {
 }
 
 function generateDots(params) {
+	const $mapListInfo = params.mapListInfoSelector;
 	for (let index = 0; index < params.coordinatesAndDataMapArray.length; index++) {
 		const dataMap = params.coordinatesAndDataMapArray[index].dataMap;
 		const coordinates = params.coordinatesAndDataMapArray[index].coords.split(',');
@@ -525,24 +542,17 @@ function generateDots(params) {
 			index + "'" +
 			"data-map='" + dataMap + "'" +
 			"coords='" + params.coordinatesAndDataMapArray[index].coords + "'" +
-			">" + "<div class='circle'></div>" + "</div>"
+			">" + $($mapListInfo[index]).attr('data-number') + "</div>"
 		$(params.relativeWrapperSelector).append(dot);
 		let currentDotSelector = ".dot-" + index;
 		$(currentDotSelector).css({
 			"position": "absolute",
 			"width": coordinate.radius * 2 + "px",
 			"height": coordinate.radius * 2 + "px",
-			"top": "0px",
+			"top": (coordinate.y - coordinate.radius) + "px",
 			"left": (coordinate.x - coordinate.radius) + "px",
 			"z-index": 1,
-			"display": "block",
 			"border-radius": "50%"
-		});
-		$(currentDotSelector).animate({
-			"top": (coordinate.y - coordinate.radius) + "px",
-			"opacity": 1,
-		}, 1000 + index * 500, function () {
-			$(this).children('.circle').addClass('active');
 		});
 	}
 }
