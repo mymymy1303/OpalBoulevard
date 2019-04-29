@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+	<link rel="manifest" href="./favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link
+		href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700&amp;amp;subset=vietnamese"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./css/global.min.css">
+	<link rel="stylesheet" href="./css/main.min.css">
+	<title>Opal Bolevard - Dự án căn hộ cao cấp</title>
+	<script>
+		; (function () {
+			function id(v) { return document.getElementById(v); }
+			function loadbar() {
+				var ovrl = id("overlay"),
+					prog = id("progress"),
+					stat = id("progstat"),
+					img = document.images,
+					c = 0,
+					tot = img.length;
+				if (tot == 0) return doneLoading();
+
+				function imgLoaded() {
+					c += 1;
+					var perc = ((100 / tot * c) << 0);
+					prog.style.width = perc;
+					stat.innerHTML = perc;
+					if (c === tot) return doneLoading();
+				}
+				function doneLoading() {
+					ovrl.style.opacity = 0;
+					setTimeout(function () {
+						ovrl.style.display = "none";
+					}, 1200);
+				}
+				for (var i = 0; i < tot; i++) {
+					var tImg = new Image();
+					tImg.onload = imgLoaded;
+					tImg.onerror = imgLoaded;
+					tImg.src = img[i].src;
+				}
+			}
+			document.addEventListener('DOMContentLoaded', loadbar, false);
+		}());
+
+	</script>
+</head>
+
+<body class="home-page">
+	<div id="overlay">
+		<div class="logo-loader"></div>
+		<div class="progstat-wrapper">Loading: <span id="progstat"></span>%</div>
+		<div id="progress"></div>
+	</div>
+	<div class="progress-bar"></div>
+	<div class="progress-bar-bg"></div>
+	<header>
+		<div class="container desktop-header"><a class="logo" href="/"></a>
+			<nav><a class="active" href="/">Trang chủ</a><a href="javascript:void(0)">Giới thiệu</a><a
+					href="javascript:void(0)">Vị trí</a><a href="javascript:void(0)">Mặt bằng</a><a
+					href="javascript:void(0)">Tiện ích</a><a href="javascript:void(0)">Nhà mẫu 360</a><a
+					href="javascript:void(0)">Tin tức</a><a href="javascript:void(0)">Tiến độ</a><a
+					href="javascript:void(0)">Thư viện</a><a href="javascript:void(0)">Liên hệ</a></nav><a class="phone"
+				href="tel:0964355355"><em class="mdi mdi-phone"></em><span>0964 355 355 </span></a>
+			<div class="btn-header-menu"><em class="mdi mdi-menu"></em></div>
+		</div>
+		<div class="mobile-header">
+			<div class="logo-mobile"></div>
+		</div>
+		<div class="backdrop"></div>
+	</header>
+	<main>
+		<div class="banner-trangchu"><a href="#">
+				<div class="img" bg-img="./img/bg_banner_1.jpg" bg-img-mobile="./img/bg_banner_1.jpg"></div>
+			</a></div>
+		<div class="home-1">
+			<div class="container">
+				<h2>opal boulevard</h2>
+				<h1>Đại lộ phồn hoa, giao thoa thịnh vượng</h1>
+				<p>Lấy cảm hứng từ vẻ đẹp lung linh của những viên đá quý, kết hợp với ý tưởng kiến tạo một thành phố
+					năng động và hiện đại, Opal Boulevard mang vẻ đẹp rực rỡ, thời thượng của một khu đô thị sầm uất
+					trên đại lộ đẹp nhất Tp.HCM. Nơi đây chính là chốn an cư lý tưởng kết nối cộng đồng sống văn minh
+					của thời đại 4.0.</p>
+			</div>
+		</div>
+		<div class="home-parallax" data-parallax="scroll" data-speed="0.3" data-image-src="./img/bg_luxury01.jpg"
+			data-image-src-mobile="./img/bg_luxury01.jpg">
+			<div class="container">
+				<h2>
+					Vị trí chiến lược, kết nối<br>đa chiều</h2>
+				<div class="link"><a href="javascript:void(0)">Xem vị trí</a></div>
+			</div>
+		</div>
+		<div class="home-parallax" data-parallax="scroll" data-speed="0.3" data-image-src="./img/bg_luxury02.jpg"
+			data-image-src-mobile="./img/bg_luxury02.jpg">
+			<div class="container">
+				<h2>TRẢI NGHIỆM TIỆN ÍCH TẦM CAO</h2>
+				<div class="link"><a href="javascript:void(0)">Xem tiện ích</a></div>
+			</div>
+		</div>
+		<div class="home-parallax" data-parallax="scroll" data-speed="0.3" data-image-src="./img/bg_luxury03.jpg"
+			data-image-src-mobile="./img/bg_luxury03.jpg">
+			<div class="container">
+				<h2>
+					KHÔNG GIAN SỐNG KHẲNG ĐỊNH<br>ĐẲNG CẤP CHỦ NHÂN</h2>
+				<div class="link"><a href="javascript:void(0)">Xem mặt bằng</a></div>
+			</div>
+		</div>
+		<div class="home-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<h2>Tiện ích</h2>
+						<h3>Các tiện ích nổi bật tại Opal Boulevard</h3>
+					</div>
+					<div class="col-lg-6">
+						<p>Với ý tưởng đưa các tiện ích nội khu lên lưng chừng trời sẽ mang lại cho cư dân sự trải
+							nghiệm đầy thú vị và hoàn toàn khác biệt: Hồ bơi vô cực, sân vườn trên cao, phòng tập gym &
+							yoga trên cao, khu leo núi trẻ em, khu giải trí, vườn tri thức… tất cả tạo nên một phong
+							cách sống hoàn mỹ, đủ đầy và tiện nghi cho cả gia đình.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="home-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-lg-3">
+						<div class="item">
+							<div class="icon"><img src="./img/icon_01.png" alt=""></div>
+							<div class="title">
+								<h2>Bơi giữa trời mây</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="item">
+							<div class="icon"><img src="./img/icon_02.png" alt=""></div>
+							<div class="title">
+								<h2>VƯỜN ƯƠM TRI THỨC</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="item">
+							<div class="icon"><img src="./img/icon_03.png" alt=""></div>
+							<div class="title">
+								<h2>LEO NÚI TẠI GIA</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="item">
+							<div class="icon"><img src="./img/icon_04.png" alt=""></div>
+							<div class="title">
+								<h2>SỐNG YÊU VẬN ĐỘNG</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="home-5">
+			<div class="container">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="./img/bg_luxury01.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/bg_luxury02.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/bg_luxury03.jpg" alt=""></div>
+					</div>
+					<div class="swiper-controls">
+						<div class="btn-prev"><em class="mdi mdi-chevron-left"></em></div>
+						<div class="btn-next"><em class="mdi mdi-chevron-right"></em></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="home-6" bg-img="./img/bg_wood.jpg" bg-img-mobile="./img/bg_wood.jpg">
+			<div class="container">
+				<h2>Tin tức</h2>
+				<div class="row">
+					<div class="col-md-6 col-lg-4"><a class="item" href="javascript:void(0)">
+							<div class="img"><img src="/img/tip1.jpg" alt="" data-object-fit-cover></div>
+							<div class="content">
+								<h2>GIẬT MÌNH TRƯỚC VẺ ĐẸP DỰ ÁN CĂN HỘ OPAL BOULEVARD</h2>
+								<div class="btn-viewmore">
+									<p>Xem thêm</p>
+								</div>
+							</div>
+						</a></div>
+					<div class="col-md-6 col-lg-4"><a class="item" href="javascript:void(0)">
+							<div class="img"><img src="/img/tip2.jpg" alt="" data-object-fit-cover></div>
+							<div class="content">
+								<h2>ĐIỂM NHẤN OPAL BOULEVARD SO VỚI CÁC CĂN HỘ Ở THỦ ĐỨC</h2>
+								<div class="btn-viewmore">
+									<p>Xem thêm</p>
+								</div>
+							</div>
+						</a></div>
+					<div class="col-md-6 col-lg-4"><a class="item" href="javascript:void(0)">
+							<div class="img"><img src="/img/tip3.jpg" alt="" data-object-fit-cover></div>
+							<div class="content">
+								<h2>CẬP NHẬT MỚI NHẤT VỀ OPAL BOULEVARD: GIÁ BÁN, MẶT BẰNG, TIẾN ĐỘ</h2>
+								<div class="btn-viewmore">
+									<p>Xem thêm</p>
+								</div>
+							</div>
+						</a></div>
+					<div class="col-md-6 col-lg-4"><a class="item" href="javascript:void(0)">
+							<div class="img"><img src="/img/tip4.jpg" alt="" data-object-fit-cover></div>
+							<div class="content">
+								<h2>HẠ TẦNG PHÁT TRIỂN - LỢI THẾ CHO DỰ ÁN OPAL BOULEVARD</h2>
+								<div class="btn-viewmore">
+									<p>Xem thêm</p>
+								</div>
+							</div>
+						</a></div>
+					<div class="col-md-6 col-lg-4"><a class="item" href="javascript:void(0)">
+							<div class="img"><img src="/img/tip5.jpg" alt="" data-object-fit-cover></div>
+							<div class="content">
+								<h2>OPAL BOULEVARD - LỰA CHỌN TUYỆT VỚI CHO GIA ĐÌNH TRẺ</h2>
+								<div class="btn-viewmore">
+									<p>Xem thêm</p>
+								</div>
+							</div>
+						</a></div>
+					<div class="col-md-6 col-lg-4"><a class="item" href="javascript:void(0)">
+							<div class="img"><img src="/img/tip6.jpg" alt="" data-object-fit-cover></div>
+							<div class="content">
+								<h2>TIẾN ĐỘ DỰ ÁN OPAL BOULEVARD</h2>
+								<div class="btn-viewmore">
+									<p>Xem thêm</p>
+								</div>
+							</div>
+						</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="home-7">
+			<div class="container">
+				<h2>Đối tác uy tín</h2>
+				<div class="row">
+					<div class="col-sm-6 col-lg-3"><a class="item" href="javascript:void(0)" target="_blank">
+							<div class="icon"><img src="./img/logo5.png" alt=""></div>
+							<div class="title">
+								<h3>CHỦ ĐẦU TƯ</h3>
+							</div>
+						</a></div>
+					<div class="col-sm-6 col-lg-3"><a class="item" href="https://www.datxanh.vn/" target="_blank">
+							<div class="icon"><img src="./img/logo1.png" alt=""></div>
+							<div class="title">
+								<h3>NHÀ PHÁT TRIỂN DỰ ÁN</h3>
+							</div>
+						</a></div>
+					<div class="col-sm-6 col-lg-3"><a class="item" href="https://tpb.vn/" target="_blank">
+							<div class="icon"><img src="./img/logo2.png" alt=""></div>
+							<div class="title">
+								<h3>NGÂN HÀNG HỖ TRỢ</h3>
+							</div>
+						</a></div>
+					<div class="col-sm-6 col-lg-3"><a class="item" href="http://www.ong-ong.com/" target="_blank">
+							<div class="icon"><img src="./img/logo3.png" alt=""></div>
+							<div class="title">
+								<h3>TƯ VẤN THIẾT KẾ</h3>
+							</div>
+						</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="home-8"><a href="#">Đăng ký ngay</a></div>
+	</main>
+	<footer bg-img="./img/bg_creammarble3.jpg" bg-img-mobile="./img/bg_creammarble3.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h2>Liên hệ</h2>
+					<h3>Vui lòng liên hệ trực tiếp hoặc sử dụng form bên dưới để điền thông tin liên hệ và chúng tôi sẽ
+						phản hồi lại trong thời gian sớm nhất có thể.</h3><a class="contact-info"
+						href="tel:0964 355 355"><em class="mdi mdi-phone"></em><span>0964 355 355</span></a><a
+						class="contact-info" href="javascript:void(0)"><em class="mdi mdi-fax"></em><span>028 6285
+							3896</span></a><a class="contact-info" href="mailto: info@datxanh.com.vn"><em
+							class="mdi mdi-email"></em><span>info@datxanh.com.vn</span></a>
+				</div>
+				<div class="col-lg-8 contact-form">
+					<form action="#">
+						<div class="row wrap-form">
+							<div class="col-lg-6">
+								<div class="form-group">
+									<input type="text" placeholder="Họ tên*">
+								</div>
+								<div class="form-group">
+									<input type="text" placeholder="Số điện thoại*">
+								</div>
+								<div class="form-group">
+									<input type="text" placeholder="Email*">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group form-textarea">
+									<textarea placeholder="Nội dung liên hệ"></textarea>
+								</div>
+								<div class="helper-text">Vui lòng điền đầy đủ thông tin với những trường có dấu *</div>
+								<input type="submit" value="Gửi thông tin">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer><a href="javascript:void(0)">
+		<div class="backtotop"><img src="./img/backtotop.svg"></div>
+	</a>
+	<div class="footer-social-links"><a href="https://www.facebook.com/TapDoanDatXanh" target="_blank"><em
+				class="mdi mdi-facebook"></em></a><a href="https://www.instagram.com/tapdoandatxanh/"
+			target="_blank"><em class="mdi mdi-instagram"></em></a><a
+			href="https://www.youtube.com/channel/UCjINAyqjfv1Hpq9ClS03jww" target="_blank"><em
+				class="mdi mdi-youtube"></em></a></div>
+	<script>
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0&autoLogAppEvents=1';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		window.twttr = (function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+				t = window.twttr || {};
+			if (d.getElementById(id)) return t;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			t._e = [];
+			t.ready = function (f) {
+				t._e.push(f);
+			};
+			return t;
+		}(document, "script", "twitter-wjs"));
+	</script>
+	<script src="./js/global.min.js"></script>
+	<script src="./js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+.home-8
+    position: fixed
+    z-index: 8888
+    top: 50%
+    right: 10px
+    transform: translateY(-50%)
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    a
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        background: linear-gradient(-45deg, $secondary 0%, #ffcb05 100%)
+        border-radius: 50%
+        color: $trang
+        text-decoration: none
+        text-align: center
+        line-height: 24px
+        font-size: 15px
+        font-weight: 300
+        position: relative
+        transition: .25s cubic-bezier(.4,0,.2,1)
+        &:before
+            position: absolute
+            content: ''
+            z-index: -1
+            width: 60px
+            height: 60px
+            top: -5px
+            left: -5px
+            border-radius: 50%
+            background: linear-gradient(-45deg, $secondary 0%, #ffcb05 100%)
+            opacity: .8
+            animation: btnRegister 1.5s infinite
+        &:hover
+            border-radius: 0
+            border-top-right-radius: 5px
+            border-bottom-right-radius: 5px
+            &:before
+                visibility: hidden
+            span
+                opacity: 1
+                left: -150px
+                border-top-left-radius: 5px
+                border-bottom-left-radius: 5px
+                border-right: 2px solid $trang
+
+    @keyframes btnRegister
+        0%
+            transform: scale(.8)
+        70%
+            opacity: 0.4
+            transform: scale(1.2)
+        100%
+            opacity: 0
+            transform: scale(1.4)
+
+    span
+        position: absolute
+        z-index: 2
+        width: 150px
+        height: 50px
+        left: 0px
+        opacity: 0
+        top: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        background: linear-gradient(-45deg, $secondary 0%, #ffcb05 100%)
+        color: $trang
+        font-size: 15px
+        font-weight: 500
+        transition: .25s cubic-bezier(.4,0,.2,1)
+
+    em
+        font-size: 24px

@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block var
+	- var title = 'Tin tức'
+	- var bodyClass = 'tintuc-page'
+
+block main
+	include ../components/banner/trangrieng/index.pug
+	include ../components/tintuc/index.pug

@@ -1,0 +1,43 @@
+footer(bg-img="./img/bg_creammarble3.jpg" bg-img-mobile="./img/bg_creammarble3.jpg")
+	.container
+		.row
+			.col-lg-4
+				h2 Liên hệ
+				h3 Vui lòng liên hệ trực tiếp hoặc sử dụng form bên dưới để điền thông tin liên hệ và chúng tôi sẽ phản hồi lại trong thời gian sớm nhất có thể.
+
+				a(href="tel:0964 355 355").contact-info
+					em.mdi.mdi-phone
+					span 0964 355 355
+				a(href="javascript:void(0)").contact-info
+					em.mdi.mdi-fax
+					span 028 6285 3896
+				a(href="mailto: info@datxanh.com.vn").contact-info
+					em.mdi.mdi-email
+					span info@datxanh.com.vn
+			.col-lg-8.contact-form
+				form(action="#")
+					.row.wrap-form
+						.col-lg-6
+							.form-group
+								input(type="text" placeholder="Họ tên*")
+							.form-group
+								input(type="text" placeholder="Số điện thoại*")
+							.form-group
+								input(type="text" placeholder="Email*")
+						.col-lg-6
+							.form-group.form-textarea
+								textarea(placeholder="Nội dung liên hệ")
+							.helper-text Vui lòng điền đầy đủ thông tin với những trường có dấu *
+							input(type="submit" value="Gửi thông tin") 
+
+a(href='javascript:void(0)')
+	.backtotop
+		img(src='./img/backtotop.svg')
+
+.footer-social-links
+	a(href="javascript:void(0)")
+		em.mdi.mdi-facebook
+	a(href="javascript:void(0)")
+		em.mdi.mdi-twitter
+	a(href="javascript:void(0)")
+		em.mdi.mdi-youtube

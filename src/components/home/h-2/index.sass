@@ -1,0 +1,49 @@
+.home-parallax
+    display: flex
+    align-items: center
+    width: 100%
+    height: calc(100vh - 50px)
+    
+    h2
+        text-transform: uppercase
+        font-weight: 200
+        font-size: 30px
+        line-height: 40px
+        color: $trang
+        text-align: center
+        width: 80%
+        margin-left: auto
+        margin-right: auto
+        text-shadow: rgba(0,0,0,0.6) 0.1em 0.1em 0.2em
+        br 
+            display: none
+
+    .link
+        margin-top: 30px
+        display: flex
+        align-items: center
+        justify-content: center
+
+        a
+            text-decoration: none
+            font-style: italic
+            font-size: 16px
+            border-bottom: 1px solid $trang
+            color: $trang
+            transition: .25s cubic-bezier(.4,0,.2,1)
+            &:hover
+                color: #ffcb05
+                border-bottom: 1px solid #ffcb05
+    
+    @media (min-width: 768px)
+        h2
+            width: 50%
+
+    @media (min-width: 992px)
+        height: calc(100vh - 75px)
+        h2
+            font-size: 50px
+            line-height: 60px
+            width: 100%
+            br
+                display: block

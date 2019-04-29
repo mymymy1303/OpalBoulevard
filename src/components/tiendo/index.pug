@@ -1,0 +1,73 @@
+.tiendo-wrapper
+    .container
+        h1.gradient-title Tiến độ dự án
+        select.selectNav
+            option(value="") 2019
+            option(value="") 2018
+            option(value="") 2017
+
+        .row
+            .col-md-6.col-lg-4
+                a(onclick="fancyboxImages('tiendo-1')").tiendo
+                    .img
+                        img(data-src='./img/tiendo/1.jpg', alt='', data-object-fit-cover="").lazyload.blur-up
+                        .icon
+                            img(data-src='./img/search-icon.png', alt='').lazyload.blur-up
+                    .title
+                        h2 Tháng 04 - 2019
+                    .images.hidden
+                        img(data-src='./img/gioithieu/1.jpg', alt='' data-fancybox="tiendo-1" data-caption="asdasdasd").lazyload.blur-up
+                        img(data-src='./img/gioithieu/2.jpg', alt='' data-fancybox="tiendo-1").lazyload.blur-up
+            .col-md-6.col-lg-4
+                a(onclick="fancyboxImages('tiendo-2')").tiendo
+                    .img
+                        img(data-src='./img/tiendo/1.jpg', alt='', data-object-fit-cover).lazyload.blur-up
+                        .icon
+                            img(data-src='./img/search-icon.png', alt='').lazyload.blur-up
+                    .title
+                        h2 Tháng 04 - 2019
+                    .images.hidden
+                        img(data-src='./img/gioithieu/1.jpg', alt='' data-fancybox="tiendo-2").lazyload.blur-up
+                        img(data-src='./img/gioithieu/2.jpg', alt='' data-fancybox="tiendo-2").lazyload.blur-up
+            .col-md-6.col-lg-4
+                a(onclick="fancyboxImages('tiendo-3')").tiendo
+                    .img
+                        img(data-src='./img/tiendo/1.jpg', alt='', data-object-fit-cover).lazyload.blur-up
+                        .icon
+                            img(data-src='./img/search-icon.png', alt='').lazyload.blur-up
+                    .title
+                        h2 Tháng 04 - 2019
+                    .images.hidden
+                        img(data-src='./img/gioithieu/1.jpg', alt='' data-fancybox="tiendo-3").lazyload.blur-up
+                        img(data-src='./img/gioithieu/2.jpg', alt='' data-fancybox="tiendo-3").lazyload.blur-up
+            .col-md-6.col-lg-4
+                a(onclick="fancyboxImages('tiendo-4')").tiendo
+                    .img
+                        img(data-src='./img/tiendo/1.jpg', alt='', data-object-fit-cover).lazyload.blur-up
+                        .icon
+                            img(data-src='./img/search-icon.png', alt='').lazyload.blur-up
+                    .title
+                        h2 Tháng 04 - 2019
+                    .images.hidden
+                        img(data-src='./img/gioithieu/1.jpg', alt='' data-fancybox="tiendo-4").lazyload.blur-up
+                        img(data-src='./img/gioithieu/2.jpg', alt='' data-fancybox="tiendo-4").lazyload.blur-up
+        .modulepager
+            ul.pagination
+                li.PagerOtherPageCells
+                    a.ModulePager.FirstPage(href='#', title='Trang đầu tiên') «
+                li.PagerOtherPageCells
+                    a.ModulePager.BackPage(href='#', title='Quay lại trang 5') ‹
+                li.PagerCurrentPageCell.active
+                    span.SelectedPage(title='Đến trang 1') 1
+                li.PagerOtherPageCells
+                    a.ModulePager(href='#', title='Đến trang 2') 2
+                li.PagerOtherPageCells
+                    a.ModulePager(href='#', title='Đến trang 3') 3
+                li.PagerOtherPageCells
+                    a.ModulePager(href='#', title='Đến trang 4') 4
+                li.PagerOtherPageCells
+                    a.ModulePager(href='#', title='Đến trang 5') 5
+                li.PagerOtherPageCells
+                    a.ModulePager.NextPage(href='#', title='Chuyển đến trang 7') ›
+                li.PagerOtherPageCells
+                    a.ModulePager.LastPage(href='#5', title='Trang cuối') »

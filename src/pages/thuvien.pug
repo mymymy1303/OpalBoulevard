@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block var
+	- var title = 'Thư viện ảnh'
+	- var bodyClass = 'thuvien-page'
+
+block main
+	include ../components/banner/trangrieng/index.pug
+	include ../components/thuvien/index.pug

@@ -1,0 +1,37 @@
+.matbang-3
+    nav.zone-list-nav
+        .desktop
+            .container
+                    a(href="javascript:void(0)") Tầng 4
+                    a(href="javascript:void(0)").active Tầng 5 - 19
+                    a(href="javascript:void(0)") Tầng 20
+                    a(href="javascript:void(0)") Tầng 21 - 35
+        .mobile
+            .container
+                select
+                    option(value="javascript:void(0)") Tầng 4
+                    option(value="javascript:void(0)") Tầng 5 - 19
+                    option(value="javascript:void(0)") Tầng 20
+                    option(value="javascript:void(0)") Tầng 21 - 35
+
+    .content
+        .container
+            .desc Mặt bằng căn hộ
+            h1.gradient-title.center Tầng 5 - 19 | Tháp B
+
+            .map-list.hidden
+                .map-list-3
+                    div.map-list-info(data-map="1234")
+                        .title Căn hộ B2 - 04 | 2PN
+                        .url.hidden /matbang-04.html
+                        .pointer
+            .imagemap-wrapper
+                .map-wrapper
+                    img#map-image(src='./img/matbang/03/map.png', alt='', usemap='#matbang-03-map')
+                    map(name='matbang-03-map')
+                        area(shape="poly" coords="116,386,116,426,121,427,123,472,238,476,238,387" data-map="1234")
+
+                .tooltip-wrapper
+                    .tooltip(data-map="1234")
+                        .title Căn hộ B2 - 04 | 2PN
+                        .pointer

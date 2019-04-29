@@ -1,0 +1,26 @@
+{
+	"font": [
+		"bower_components/mdi/fonts/*",
+		"bower_components/font-awesome/webfonts/*",
+		"bower_components/linearicons/dist/web-font/fonts/*"
+	],
+	"globalJs": [
+		"bower_components/swiper/dist/js/swiper.min.js",
+		"bower_components/jquery/dist/jquery.min.js",
+		"bower_components/fancybox/dist/jquery.fancybox.min.js",
+		"src/plugins/lazysizes.min.js",
+		"src/plugins/bgimg.js",
+		"src/plugins/mapping.js",
+		"src/plugins/mapping-listener.js",
+		"src/plugins/matchMediaService.js",
+		"src/plugins/parallax.min.js",
+		"src/plugins/imageMapResizer.min.js",
+		"src/plugins/mapify.js"
+	],
+	"globalCss": [
+		"src/plugins/grid.css",
+		"src/plugins/font.css",
+		"bower_components/swiper/dist/css/swiper.min.css",
+		"bower_components/fancybox/dist/jquery.fancybox.min.css"
+	]
+}

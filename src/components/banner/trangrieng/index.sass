@@ -1,0 +1,54 @@
+.banner-breadcrumb
+    position: relative
+.banner-trangrieng
+    .img
+        height: 350px
+
+.breadcrumb-wrapper
+    width: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 1
+
+    h2
+        font-size: 20px
+        font-weight: 300
+        color: $trang
+        text-transform: uppercase
+        text-align: center
+        margin-bottom: 5px
+        @media (min-width: 992px)
+            font-size: 35px
+            margin-bottom: 14px
+
+.breadcrumb
+    list-style: none
+    display: flex
+    align-items: center
+    justify-content: center
+    li
+        display: flex
+        align-items: center
+        &:after
+            display: inline-block
+            content: ''
+            width: 1px
+            height: 14px
+            background-color: $trang
+            margin: 0 12px
+        &:last-child
+            &:after
+                display: none
+        a
+            text-decoration: none
+            font-size: 14px
+            font-weight: 400
+            color: $trang
+            height: 100%
+            display: flex
+            align-items: center
+            &:hover
+                text-decoration: underline
+                text-underline-position: under
